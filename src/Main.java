@@ -6,23 +6,28 @@ public class Main {
 
 
     public static void main(String[] args) {
-        int match = 0;
+
         int counter = 0;
+        long match ;
 
-        final List<Integer> Lotto = new genNumbers().numberGenerator();
-        List<Integer> myNums;
 
-        do {
+        final List<Integer> myTicket = new myGenerator().numGen();
+
+        do{
+            match = 0;
             counter++;
-           myNums = new genNumbers().numberGenerator();
-            for (int x : Lotto) {
-                if (myNums.contains(x)) {
+            for(int i=0;i<myTicket.size();i++){
+                if(new myGenerator().numGen().contains(myTicket.get(i))){
                     match++;
                 }
             }
+        }while(match!=6);
 
-        } while (match != 3);
+        System.out.println(match);
+        System.out.println("you need "+counter+" tickets to win with " + match + " numbers");
 
 
     }
 }
+
+
