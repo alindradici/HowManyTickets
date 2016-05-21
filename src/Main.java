@@ -7,17 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int counter = 0;
-        long match ;
 
+        long match;
+        int counter = 0;
 
         final List<Integer> myTicket = new myGenerator().numGen();
 
         do{
+            List <Integer> list = new myGenerator().numGen();
             match = 0;
             counter++;
             for(int i=0;i<myTicket.size();i++){
-                if(new myGenerator().numGen().contains(myTicket.get(i))){
+                if(list.contains(myTicket.get(i))){
                     match++;
                 }
             }
